@@ -52,7 +52,6 @@ namespace rb.Configuration
                 {
                     var s = ConfigurationManager.AppSettings[setting];
                     var x = getServerName();
-
                     var t = ConfigurationManager.AppSettings["[" + x + "]" + setting];
                     if (t != null)
                         s = t;
@@ -68,9 +67,6 @@ namespace rb.Configuration
                 get
                 {
                     var s = ConfigurationManager.ConnectionStrings[connectionString];
-                    if (s!=null)
-                        return s;
-
                     var x = getServerName();
                     var t = ConfigurationManager.ConnectionStrings["[" + x + "]" + connectionString];
                     if (t != null)
